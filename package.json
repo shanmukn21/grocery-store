@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
     "backend": "nodemon backend/index.js",
-    "frontend": "npm run dev --prefix frontend"
+    "frontend": "vite --config frontend/vite.config.js"
   },
   "keywords": [],
   "author": "HuXn WebDev",
@@ -27,6 +27,6 @@
   },
   "devDependencies": {
     "concurrently": "^9.0.1",
-    "vite": "^5.4.10"
+    "vite": "^4.0.0"
   }
 }
