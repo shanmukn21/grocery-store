@@ -5,11 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-  "dev": "chmod +x ./node_modules/.bin/concurrently && concurrently \"npm run frontend\" \"npm run backend\"",
-  "backend": "nodemon backend/index.js",
-  "frontend": "vite --config frontend/vite.config.js"
-}
-,
+    "predev": "rm -rf node_modules && npm install",
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
+    "backend": "chmod +x ./node_modules/.bin/nodemon && nodemon backend/index.js",
+    "frontend": "vite --config frontend/vite.config.js"
+  },
   "keywords": [],
   "author": "HuXn WebDev",
   "license": "ISC",
@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "concurrently": "^9.0.1",
-    "vite": "^4.0.0"
+    "vite": "^4.0.0",
+    "@vitejs/plugin-react": "^3.0.0"
   }
 }
